@@ -1,0 +1,39 @@
+<!--index.wxml-->
+  <view class="headdisplay">
+   <view class="huizhangimg">
+       <image wx:if="{{newNum<10000}}" class='image' bindtap="clickImg"  src="../img/huizhang.png"></image> 
+       <image wx:if="{{newNum>=10000}}" class='image' bindtap="clickImg"  src="../img/huizhang(1).png"></image> 
+   </view>
+    <view class="headtext"  bindtap="clickImg">时间总计：
+        <view class="headtext2" bindtap="clickImg">你已经刻意练习达到 {{newNum}} 小时</view>
+    </view>
+  </view> 
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+     <block wx:else> 
+       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> 
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>  
+     </block> 
+  </view>
+   <view class="usermotto">
+    <text class="user-motto">{{time2+":"+time3+time4}}</text>
+  </view>
+    <view class="userbutton">
+    <button bindtap="startTap">{{userButton}}</button>
+  </view>
+  <view class="userbutton">
+    <button wx:if="{{userButton=='继续' }}" type="primary" bindtap="modalinput">保存</button>
+  </view> 
+  <view class="container" class="zn-uploadimg">
+    <view class="container">
+      <dialog id='dialog' 
+        title='起个名字' 
+        content='比如：读书'
+        bind:cancelEvent="_cancelEvent"  
+        bind:confirmEvent="_confirmEvent">
+      </dialog>
+    </view>
+</view>
+</view>
+    

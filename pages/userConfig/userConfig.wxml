@@ -1,0 +1,54 @@
+<view class="container">
+<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+     <block wx:else> 
+       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> 
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>  
+     </block> 
+  </view>
+       <!-- 分割线 -->
+  <view class="divLine"></view>
+</view>
+  <view  class='singleTrade' hover-class='item-press' >
+    <view class='a' >
+      <view class='name' id="0" bindtap="openInfoInput">我的成就</view>
+    </view>
+  </view>
+  <view class="headdisplay"  wx:if="{{stateVal=='0'}}">
+   <view class="huizhangimg">
+       <image  class='image' wx:if="{{newNum<10000}}" bindtap="clickImg"  src="../img/huizhang.png"></image>
+       <image  class='image' wx:if="{{newNum>=10000}}"  bindtap="clickImg2"  src="../img/huizhang(1).png"></image>         
+      <view class="headtext"  bindtap="clickImg">1万小时练习</view>
+   </view>
+   <view class="huizhangimg">
+       <image  class='image' wx:if="{{zcount<10000}}"  bindtap="clickImg2"  src="../img/huizhang.png"></image>
+       <image  class='image' wx:if="{{zcount>=10000}}"  bindtap="clickImg2"  src="../img/huizhang(2).png"></image>         
+       <view class="headtext"  bindtap="clickImg">1万次练习</view>
+       
+   </view>
+  </view> 
+  <view  class='singleTrade' hover-class='item-press' >
+    <view class='a' >
+      <view class='name' id="1" bindtap="openInfoInput" >建议反馈入口</view>
+    </view>
+  </view>
+<view  wx:if="{{stateVal=='1'}}">
+  <view class="singleTrade2">
+  <textarea auto-focus class='name2' value="{{userInputInfo}}"  bindinput="bindTextAreaBlur" auto-height placeholder="输出内容" />
+  </view>
+    <button class='a' type="primary"  bindtap="infoSubmit">提交</button>
+</view>
+
+  <view  class='singleTrade' hover-class='item-press' >
+    <view class='a' >
+      <view class='name' id="2" bindtap="openInfoInput">联系管理员</view>
+    </view>
+  </view>
+  <view class="singleTrade" wx:if="{{stateVal=='2'}}">
+    <text class='name2'>微信：lx5456985</text>
+  </view>
+    <view  class='singleTrade' hover-class='item-press' >
+    <view class='a' >
+      <view class='name' bindtap="openMore" >更多</view>
+    </view>
+  </view>

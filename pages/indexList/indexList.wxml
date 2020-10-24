@@ -1,0 +1,31 @@
+ <block wx:for='{{dateList}}' wx:key="item">
+   <view  class='singleTrade' hover-class='item-press' >
+     <view class='a' >
+       <view class='name' id="{{item}}" bindtap="selectItem" >{{item}}</view>
+     </view>
+     <view class='b'>
+       <image src="{{item===itemView ? '../img/pull(1).png' : '../img/pull.png'}}" id="{{item}}" bindtap="selectItem" class='b_img'  data-pos='{{index}}' />
+     </view>
+   </view>
+
+  <view wx:if="{{item===itemView}}">
+    <view class='singleTradeItem2' hover-class='item-press'>
+    <view class='headinfo2' id="{{item.id}}" >名字</view>
+    <view class='headinfo2' id="{{item.id}}" >时间戳</view>
+    <view class='headinfo1' id="{{item.id}}" >记录</view>
+    </view>
+    <block wx:for='{{infoList}}'  wx:key="item">
+      <view class='singleTradeItem' hover-class='item-press'>
+      <view class='info2' id="{{item.id}}" >{{item.jobName}}</view>
+      <view class='info2' id="{{item.id}}" >{{item.time}}</view>
+      <view class='info1' id="{{item.id}}" >{{item.jobType  ? item.timeAndCount : item.timeAndCount+"(个/次)"}}</view>
+    </view>
+   </block>
+       <view class='singleTradeItem2' hover-class='item-press'>
+    <view class='info3' id="{{item.id}}">今日统计：时长：{{newNum}} 时——次数：{{zcount}}(次/个)
+    </view>
+    </view>
+  </view> 
+  <!-- </view>   -->
+ </block>
+

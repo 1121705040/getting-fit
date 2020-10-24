@@ -1,0 +1,82 @@
+/* pages/indexList/indexList.wxss */
+.singleTrade {
+  background: #fff;
+  padding: 20rpx;
+  font-size: 30px;
+  display: flex;
+  border-bottom: 3rpx solid #fafafa;
+}
+.singleTradeItem2 {
+  background: #eee;
+  padding: 13rpx;
+  display: flex;
+  border-bottom: 3rpx solid #fafafa;
+}
+.singleTradeItem {
+  background: #fff;
+  padding: 13rpx;
+  display: flex;
+  border-bottom: 3rpx solid #fafafa;
+}
+
+.item-press {
+  background: #fafafa;
+}
+
+.b_img {
+  width: 50rpx;
+  height: 50rpx;
+  bottom: 20rpx;
+}
+
+.a {
+  flex: 1;
+  margin: 0rpx 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.info1 {
+  width: 286rpx;
+  text-align:center;
+  font-size: 11pt;
+  color: #aaa;
+}
+.info2 {
+  width: 221rpx;
+  text-align:center;
+  font-size: 11pt;
+  color: #aaa;
+}
+.info3 {
+  font-size: 11pt;
+
+}
+.headinfo1 {
+  width: 286rpx;
+  text-align:center;
+  font-size: 13pt;
+}
+.headinfo2 {
+  width: 221rpx;
+  text-align:center;
+  font-size: 13pt;
+}
+.name {
+  font-size: 18pt;
+  line-height: 50rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}

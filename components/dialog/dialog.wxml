@@ -1,0 +1,21 @@
+<!--components/dialog/dialog.wxml-->
+
+<view class='wx_dialog_container' hidden="{{!isShow}}">
+    <view class='wx-mask'></view>
+    <view class='wx-dialog'>
+        <view class='wx-dialog-title'>{{ title }}</view>
+        <!-- <view class='wx-dialog-content'>{{ content }}</view> -->
+        <input value="{{inputValue}}" auto-focus placeholder="{{content}}"
+         maxlength="7" bindblur="bindKeyInput" />
+         <view  wx:if="{{showHistory}}">
+           <view class="divLine"></view>
+              <button class="uttonmini" wx:for="{{nameList}}" wx:key="key" bindtap='toInput' id='{{item.jobName}}' data-index="{{item._id}}">
+              {{item.jobName}}
+              </button>              
+          </view>
+        <view class='wx-dialog-footer'>
+          <view class='wx-dialog-btn' catchtap='_cancelEvent'>{{ cancelText }}</view>
+          <view class='wx-dialog-btn' catchtap='_confirmEvent'>{{ confirmText }}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,48 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/indexCount/indexCount",
+    "pages/indexList/indexList",
+    "pages/userConfig/userConfig"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTitleText": "getting-fit",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+
+  "tabBar": {
+    "selectedColor":"#1296db",
+    "color":"#bfbfbf",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "时间",
+          "iconPath": "pages/img/time.png",
+          "selectedIconPath": "pages/img/time1.png"
+        },
+        {
+          "pagePath": "pages/indexCount/indexCount",
+          "text": "次数",
+          "iconPath": "pages/img/count-1.png",
+          "selectedIconPath": "pages/img/count-2.png"
+        },
+        {
+          "pagePath": "pages/indexList/indexList",
+          "text": "历史",
+          "iconPath": "pages/img/count.png",
+          "selectedIconPath": "pages/img/count1.png"
+        },
+        {
+          "pagePath": "pages/userConfig/userConfig",
+          "text": "设置",
+          "iconPath": "pages/img/config.png",
+          "selectedIconPath": "pages/img/config1.png"
+        }
+      ]
+    }
+}

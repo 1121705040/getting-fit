@@ -1,0 +1,34 @@
+  <view class="headdisplay">
+   <view class="huizhangimg">
+       <image  class='image' wx:if="{{zcount<10000}}" bindtap="clickImg"  src="../img/huizhang.png"></image> 
+        <image  class='image' wx:if="{{zcount>=10000}}" bindtap="clickImg"  src="../img/huizhang(2).png"></image> 
+   </view>
+    <view class="headtext"  bindtap="clickImg">次数总计：
+        <view class="headtext2"  bindtap="clickImg">你已经刻意练习达到 {{zcount}} 个/次</view>
+    </view>
+  </view> 
+<view class="container">
+<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+     <block wx:else> 
+       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> 
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>  
+     </block> 
+  </view>
+  <view class="usermotto">
+        <input class="textmargin" value="{{countValue}}" type="number" placeholder="运动量(个/次)" maxlength="16" bindinput="countInput" />
+  </view>
+  <view class="userbutton">
+    <button type="primary" bindtap="modalinput">保存</button>
+  </view> 
+  <view class="container" class="zn-uploadimg">
+    <view class="container">
+      <dialog id='dialog' 
+        title='起个名字' 
+        content='比如：俯卧撑'
+        bind:cancelEvent="_cancelEvent"  
+        bind:confirmEvent="_confirmEvent">
+      </dialog>
+    </view>
+  </view>
+</view>
